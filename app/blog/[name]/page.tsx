@@ -14,6 +14,15 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
+interface PostData {
+	id: string
+	title: string
+	image?: string
+	smallDescription: string
+	createdAt: Date
+	slug: string
+}
+
 async function getData(subDir: string) {
 	const data = await prisma.site.findUnique({
 		where: {
@@ -65,7 +74,7 @@ export default async function BlogIndexPage({
 			</nav>
 
 			<div className='grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-7'>
-				{data.posts.map((item: any) => (
+				{data.posts.map((item: PostData) => (
 					<Card key={item.id}>
 						<Image
 							src={item.image ?? Defaultimage}
