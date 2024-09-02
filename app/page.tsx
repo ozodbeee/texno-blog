@@ -3,6 +3,7 @@ import { redirect } from 'next/navigation'
 import { Features } from './components/frontend/features'
 import Hero from './components/frontend/hero'
 import { Logos } from './components/frontend/logos'
+import PricingTabel from './components/shared/pricing'
 
 export default async function Home() {
 	const { getUser } = getKindeServerSession()
@@ -17,6 +18,7 @@ export default async function Home() {
 			<Hero />
 			<Logos />
 			<Features />
+			<PricingTabel />
 		</div>
 	)
 }
