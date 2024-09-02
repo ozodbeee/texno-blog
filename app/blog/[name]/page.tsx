@@ -64,17 +64,16 @@ export default async function BlogIndexPage({
 				</div>
 			</nav>
 
-			<div className='grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5'>
+			<div className='grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-7'>
 				{data.posts.map(item => (
 					<Card key={item.id}>
 						<Image
 							src={item.image ?? Defaultimage}
 							alt={item.title}
-							className='rounded-t-[20px] object-cover w-full h-[200px] p-4'
+							className='rounded-t-lg object-cover w-full h-[200px]'
 							width={400}
 							height={200}
 						/>
-
 						<CardHeader>
 							<CardTitle className='truncate'>{item.title}</CardTitle>
 							<CardDescription className='line-clamp-3'>
